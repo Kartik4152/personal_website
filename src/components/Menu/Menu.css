@@ -1,0 +1,75 @@
+.menuContainer {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 15vw;
+  height: 100vh;
+  background-color: #faf7ff;
+  clip-path: circle(2rem at 50% 4rem);
+  transition: clip-path 1s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+}
+
+.menuContainer.active {
+  clip-path: circle(100% at 50% 50%);
+}
+
+.menuContainer.active .hamburg {
+  transform: rotateZ(360deg);
+  background-color: transparent;
+}
+
+.menuContainer.active .hamburg::before {
+  transform: rotateZ(45deg);
+}
+.menuContainer.active .hamburg::after {
+  transform: rotateZ(-45deg);
+}
+
+#menuOpen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: calc(50% - 2rem);
+  top: 2rem;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  background: #faf7ff;
+}
+
+.menuText {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.hamburg {
+  opacity: 1;
+  width: 1.5rem;
+  height: 2px;
+  background-color: rgb(23, 23, 23);
+  transition: all 0.5s ease-in-out;
+}
+
+.hamburg::before,
+.hamburg::after {
+  position: absolute;
+  content: "";
+  width: inherit;
+  height: inherit;
+  background-color: rgb(23, 23, 23);
+  transition: all 0.5s ease-in-out;
+}
+
+.hamburg::before {
+  transform: translateY(8px);
+}
+.hamburg::after {
+  transform: translateY(-8px);
+}

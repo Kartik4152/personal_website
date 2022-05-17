@@ -1,0 +1,100 @@
+:root {
+  --height: 40px;
+  --width: 150px;
+  --depth: 30px;
+}
+
+.loaderContainer {
+  clip-path: circle(2000px at 50% 50%);
+  transition: all 1.5s ease;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(23, 23, 23);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* perspective: 600px; */
+  gap: 0.2em;
+}
+.rectangle {
+  height: var(--height);
+  width: var(--width);
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateX(10deg) rotateY(0deg);
+}
+.face {
+  position: absolute;
+  /* opacity: 0.5; */
+}
+
+.front {
+  height: var(--height);
+  width: var(--width);
+  transform: translateZ(calc(var(--depth) / 2));
+  background: #8083ff;
+}
+
+.back {
+  height: var(--height);
+  width: var(--width);
+  transform: translateZ(calc(var(--depth) / -2));
+  background: #8083ff;
+}
+
+.top {
+  height: var(--depth);
+  width: var(--width);
+  transform-origin: top;
+  transform: translateZ(calc(var(--depth) / 2)) rotateX(-90deg);
+  background-color: #8d8fff;
+}
+
+.bottom {
+  bottom: 0;
+  height: var(--depth);
+  width: var(--width);
+  transform-origin: bottom;
+  transform: translateZ(calc(var(--depth) / 2)) rotateX(90deg);
+  background-color: #8d8fff;
+}
+
+.left {
+  left: 0;
+  height: var(--height);
+  width: var(--depth);
+  transform-origin: left;
+  transform: translateZ(calc(var(--depth) / 2)) rotateY(90deg);
+  background-color: #8689ff;
+}
+.right {
+  right: 0;
+  height: var(--height);
+  width: var(--depth);
+  transform-origin: right;
+  transform: translateZ(calc(var(--depth) / 2)) rotateY(-90deg);
+  background-color: #8689ff;
+}
+
+@keyframes ghoom {
+  to {
+    transform: rotateX(10deg) rotateY(360deg);
+  }
+}
+
+.r1 {
+  animation: ghoom 3s 0.2s ease infinite;
+}
+.r2 {
+  animation: ghoom 3s 0.4s ease infinite;
+}
+.r3 {
+  animation: ghoom 3s 0.6s ease infinite;
+}
+.r4 {
+  animation: ghoom 3s 0.8s ease infinite;
+}
+.r5 {
+  animation: ghoom 3s 1s ease infinite;
+}

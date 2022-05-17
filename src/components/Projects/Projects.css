@@ -1,0 +1,11 @@
+.projectsContainer {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: translateZ(-2px);
+  transform-origin: left;
+  background-color: rgb(23, 23, 23);
+  transition: all 1s ease;
+}

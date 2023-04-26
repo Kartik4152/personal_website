@@ -11,6 +11,7 @@
   transform: translateZ(0px);
   transition: all 1s ease;
   transform-origin: left;
+  align-items: center;
 }
 
 .textBig {
@@ -53,6 +54,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transform: translateY(200%);
 }
 
 .effect-i {

@@ -5,7 +5,8 @@ import Menu from '../Menu/Menu';
 import About from '../About/About';
 import Projects from '../Projects/Projects';
 import Contact from '../Contact/Contact';
-const Main=()=>{
+
+const Main=()=>{    
     const layersRef=useRef(null);
     const homeRef=useRef(null);
     const aboutRef=useRef(null);
@@ -48,7 +49,7 @@ const Main=()=>{
             ele.current.removeEventListener('mouseleave',reset);
           })  
         }
-    },[menuOpened,layers])
+    },[menuOpened,layers]);
     return(
         <>
         <div id='layers' ref={layersRef}>
